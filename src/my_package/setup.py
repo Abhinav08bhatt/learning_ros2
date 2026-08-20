@@ -14,8 +14,8 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='avi',
-    maintainer_email='abhinav08bhatt@gmail.com',
-    description='TODO: Package description',
+    maintainer_email='example@gmail.com',
+    description='the description',
     license='Apache-2.0',
     extras_require={
         'test': [

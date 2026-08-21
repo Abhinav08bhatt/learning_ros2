@@ -187,3 +187,23 @@ setup(
 ---
 
 ## Writing a simple service and client
+
+> did it in the files
+
+---
+
+## Using `rosdoctor` to identify issue
+
+> if the package is not working as expected ; use it
+
+- general method : 
+    ```zsh
+    ros2 doctor
+    ```
+
+- report method :
+    ```zsh
+    ros2 doctor --report
+    ```
+
+---

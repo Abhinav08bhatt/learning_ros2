@@ -3,8 +3,8 @@
 <package format="3">
   <name>launch_intro</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="abhinav08bhatt@gmail.com">avi</maintainer>
+  <description>launch intro</description>
+  <maintainer email="example@gmail.com">avi</maintainer>
   <license>Apache-2.0</license>
 
   <test_depend>ament_copyright</test_depend>

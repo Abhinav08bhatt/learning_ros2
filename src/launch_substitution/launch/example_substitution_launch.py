@@ -72,7 +72,7 @@ def generate_launch_description():
                 shell = True
             ),
             # this shit literally perform this command line in place of us
-            '''ros2 service call turtlesim_ns /spawn turtlesim/srv/Spawn "{x: 2, y:  2, theta: 0.2}"'''
+            '''ros2 service call turtlesim_ns /spawn turtlesim/srv/Spawn "{x: 2, y:  2, theta: 0.2}"''',
 
             ExecuteProcess(
                 cmd = [
@@ -87,7 +87,7 @@ def generate_launch_description():
                 shell = True
             ),
             # this shit literally perform this command line in place of us
-            '''ros2 param set turtlesim_ns /sim background_r 120'''
+            '''ros2 param set turtlesim_ns /sim background_r 120''',
 
     # tells ros2 that this given section will wait for a set amount of time before execution
             TimerAction(
@@ -112,12 +112,12 @@ def generate_launch_description():
                                     use_provided_red
                                 ]
                             )
-                            # we did a simple if condition saying :
-                            '''if new_background_r == 255 and use_provided_red'''
-                            # new_background_r depends on the input the user/parent gave us....can be anything but we looking for 255
-                            # use_provided_red depends on the input the user/parent gave us...can be True or False , we need True
-                            # if both condition are True (needed by and) we execute the command below 
                         ),
+                        # we did a simple if condition saying :
+                        # '''if new_background_r == 255 and use_provided_red'''
+                        # new_background_r depends on the input the user/parent gave us....can be anything but we looking for 255
+                        # use_provided_red depends on the input the user/parent gave us...can be True or False , we need True
+                        # if both condition are True (needed by and) we execute the command below 
                         cmd=[
                             [
                                 'ros2 param set ',
@@ -127,13 +127,14 @@ def generate_launch_description():
                             ]
                         ],
                         shell = True
-                        '''ros2 param set turtlesim_ns /sim background_r new_background_r(an int)'''
-                    )
+                    ),
+                    '''ros2 param set turtlesim_ns /sim background_r new_background_r(an int)'''
                 ]
             )
 
         ]
     )
+
 
 '''
 Time 0.0s:

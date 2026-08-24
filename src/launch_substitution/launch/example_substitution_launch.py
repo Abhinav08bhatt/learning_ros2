@@ -26,7 +26,7 @@ def generate_launch_description():
     new_background_r = LaunchConfiguration('new_background_r')
          
     # example we manually can launch the sub file :
-    '''ros2 launch launch_substitution example_substitution_launch.py use_provided_red:=True new_background_r:=0'''
+    # ros2 launch launch_substitution example_substitution_launch.py use_provided_red:=True new_background_r:=0'''
 
     return LaunchDescription(
         [
@@ -72,7 +72,7 @@ def generate_launch_description():
                 shell = True
             ),
             # this shit literally perform this command line in place of us
-            '''ros2 service call turtlesim_ns /spawn turtlesim/srv/Spawn "{x: 2, y:  2, theta: 0.2}"''',
+            # ros2 service call turtlesim_ns /spawn turtlesim/srv/Spawn "{x: 2, y:  2, theta: 0.2}"''',
 
             ExecuteProcess(
                 cmd = [
@@ -87,7 +87,7 @@ def generate_launch_description():
                 shell = True
             ),
             # this shit literally perform this command line in place of us
-            '''ros2 param set turtlesim_ns /sim background_r 120''',
+            # ros2 param set turtlesim_ns /sim background_r 120''',
 
     # tells ros2 that this given section will wait for a set amount of time before execution
             TimerAction(
@@ -128,7 +128,7 @@ def generate_launch_description():
                         ],
                         shell = True
                     ),
-                    '''ros2 param set turtlesim_ns /sim background_r new_background_r(an int)'''
+                    # ros2 param set turtlesim_ns /sim background_r new_background_r(an int)'''
                 ]
             )
 

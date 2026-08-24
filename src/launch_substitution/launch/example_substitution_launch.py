@@ -12,7 +12,16 @@ from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration, PythonExpression
 # LaunchConfiguration : substitution placeholder that will get populated at the runtime (using user given argument)
 # PythonEXpression : lets us write python logic (==,and.or,+)
-
+'''
+XML / YAML name     -     Python class      -                   Description
+-----------------------------------------------------------------------------------------------------------
+$(equals A B)       - EqualsSubstitution    - Resolves to 'true' if A equals B, otherwise 'false'.
+$(not-equals A B)   - NotEqualsSubstitution - Resolves to 'true' if A does not equal B, otherwise 'false'.
+$(and A B)          - AndSubstitution       - Logical AND of two boolean substitutions.
+$(or A B)           - OrSubstitution        - Logical OR of two boolean substitutions.
+$(any A B ...)      - AnySubstitution       - Resolves to 'true' if any argument is true.
+$(all A B ...)      - AllSubstitution       - Resolves to 'true' only if every argument is true.
+'''
 from launch_ros.actions import Node
 # needed to start a node from the file
 

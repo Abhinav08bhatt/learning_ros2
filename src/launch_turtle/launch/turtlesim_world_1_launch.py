@@ -9,15 +9,15 @@ def generate_launch_description():
 
             DeclareLaunchArgument(
                 'background_r',
-                default_value=0
+                default_value='0'
             ),
             DeclareLaunchArgument(
                 'background_g',
-                default_value=0
+                default_value='0'
             ),
             DeclareLaunchArgument(
                 'background_b',
-                default_value=0
+                default_value='0'
             ),
 
             Node(

@@ -9,7 +9,7 @@ def generate_launch_description():
             Node(
                 package='turtlesim',
                 executable='turtlesim_node',
-                # namespace='turtlesim_2',   <-- they told to remove it caz we are writing directly in main launch
+                # namespace='turtlesim_2',   # <-- they told to remove it caz we are writing directly in main launch
                 name='sim',
                 parameters=[
                     PathJoinSubstitution(

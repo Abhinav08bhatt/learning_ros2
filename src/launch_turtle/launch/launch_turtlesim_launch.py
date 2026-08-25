@@ -86,7 +86,7 @@ def generate_launch_description():
                 PathJoinSubstitution(
                     [
                         launch_dir,
-                        'turtlesim_rvis_launch.py'
+                        'turtlesim_rviz_launch.py'
                     ]
                 )
             ),

@@ -17,7 +17,7 @@ def generate_launch_description():
                 name='broadcaster1',
                 parameters=[
                     {
-                        'turtlename' : 'turtle_1'
+                        'turtlename' : 'turtle1'
                     }
                 ]
             ),

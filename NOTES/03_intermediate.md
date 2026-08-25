@@ -74,3 +74,14 @@
 ```zsh
 ros2 interface show custom_action_interface/action/Fibonacci
 ```
+
+---
+
+## Writing Launch Files for large projects
+
+refer to package : ['launch_turtle'](src/launch_turtle/)
+
+> while creating a launch file our goal is to make it as reuseable as possible
+
+So our first step is to create a **top level launch** file ...a file that will call separate launch file : ['this'](src/launch_turtle/launch/launch_turtlesim_launch.py)
+

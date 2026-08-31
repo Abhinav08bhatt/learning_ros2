@@ -1,13 +1,18 @@
+# needed by the calculation function
 import math
-import sys
-
-from geometry_msgs.msg import TransformStamped
-
 import numpy as np
 
+# needed to read arguments
+import sys
+
+# the python ros module
 import rclpy
 from rclpy.node import Node
 
+# a message type (think of it as empty structure that we fill with our values)
+from geometry_msgs.msg import TransformStamped
+
+# a speaker
 from tf2_ros.static_transform_broadcaster import StaticTransformBroadcaster
 
 # forget what this is
@@ -50,37 +55,64 @@ class StaticFramePublisher(Node):
     The transformer are only published once at startup, and are constant for all time
     '''
 
-# the init thingy
+# the init thingy but this time it takes a input LIST at initialization of the class
     def __init__(self,transformation):
+
+    # giving node a name : static_frame_tf2_broadcaster <- executable name
         super().__init__('static_frame_tf2_broadcaster')
+
+    # a speaker that screams a static transformation at the startup of the Node
         self.tf_static_broadcaster = StaticTransformBroadcaster(self)
+
+    # calling our function
         self.make_transform(transformation)
 
+
+# the function that does the job....it takes the argument that were passed to the class on the instant of initialization of the node
     def make_transform(self, transformation):
+
+    # a message type : think of empty forum where we fill the details in blanks 
         t = TransformStamped()
 
+    # at the top we need the following info : 
+
+        # the current time
         t.header.stamp = self.get_clock().now().to_msg()
+        
+        # name of the world
         t.header.frame_id = "world"
+
+        # child id : first argument in the list of input
         t.child_frame_id = transformation[1]
 
+    # in the main message content we need 6d pose : translation and rotation
+
+        # translation
         t.transform.translation.x = float(transformation[2])
         t.transform.translation.y = float(transformation[3])
         t.transform.translation.z = float(transformation[4])
 
+        # converting human radian 3d rotation -> computer needed quaternion rotation
         q = quaternion_from_euler(
             float(transformation[5]),
             float(transformation[6]),
             float(transformation[7]),
         )
 
+        # rotation
         t.transform.rotation.x = q[0]
         t.transform.rotation.y = q[1]
         t.transform.rotation.z = q[2]
         t.transform.rotation.w = q[3]
 
+
+    # sending the message we filled with our info
         self.tf_static_broadcaster.sendTransform(t) 
 
+
+# the main function
 def main():
+
 
     logger = rclpy.logging.get_logger('world')
 
@@ -99,4 +131,4 @@ def main():
     except :
         pass
 
-    rclpy.shutdown()
+    rclpy.try_shutdown()

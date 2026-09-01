@@ -16,7 +16,7 @@ from tf2_ros import TransformBroadcaster
 # TransformBroadcaster is needed for frames that changes continuously like position of robot in the world
 
 # the empty forums we use as a message blueprint
-from turtlesim.msg import Pose
+from turtlesim.msg import Pose  # Pose : x , y , theta
 from geometry_msgs.msg import TransformStamped
 
 # the function to convert human 3d space to ros2 computer needed 4d space

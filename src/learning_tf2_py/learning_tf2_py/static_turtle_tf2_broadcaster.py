@@ -14,6 +14,7 @@ from geometry_msgs.msg import TransformStamped
 
 # a speaker
 from tf2_ros.static_transform_broadcaster import StaticTransformBroadcaster
+# StaticTransformBroadcaster is used for frames that will forever remain static like position of camera in robot and stuff
 
 # forget what this is
 def quaternion_from_euler(ai, aj, ak):
@@ -58,7 +59,7 @@ class StaticFramePublisher(Node):
 # the init thingy but this time it takes a input LIST at initialization of the class
     def __init__(self,transformation):
 
-    # giving node a name : static_frame_tf2_broadcaster <- executable name
+    # giving node a name : static_frame_tf2_broadcaster <- not the executable name -> executable name is present in the setup.py
         super().__init__('static_frame_tf2_broadcaster')
 
     # a speaker that screams a static transformation at the startup of the Node

@@ -18,8 +18,8 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='avi',
-    maintainer_email='abhinav08bhatt@gmail.com',
-    description='TODO: Package description',
+    maintainer_email='example@gmail.com',
+    description='learning tf2',
     license='Apache-2.0',
     extras_require={
         'test': [
@@ -31,6 +31,7 @@ setup(
             'static_frame_tf2_broadcaster = learning_tf2_py.static_turtle_tf2_broadcaster:main',
             'turtle_tf2_broadcaster = learning_tf2_py.turtle_tf2_broadcaster:main',
             'turtle_tf2_listener = learning_tf2_py.turtle_tf2_listener:main',
+            'fixed_frame_tf2_broadcaster = learning_tf2_py.fixed_frame_tf2_broadcaster:main',
         ],
     },
 )
